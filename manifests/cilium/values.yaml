@@ -1,0 +1,13 @@
+---
+# GLOBAL
+
+ipam:
+  mode: kubernetes
+
+# HUBBLE
+
+hubble:
+  relay:
+    enabled: true
+  ui:
+    enabled: true

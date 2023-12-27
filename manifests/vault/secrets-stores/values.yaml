@@ -1,0 +1,29 @@
+---
+vaultAddress: "http://127.0.0.1:8200"
+
+secretsStores:
+  - name: grafana
+    namespace: monitoring
+    roleName: grafana
+    secrets:
+      grafana-secret:
+        - kubernetesSecretKey: admin-user
+          vaultSecretPath: secrets/data/grafana
+          vaultSecretKey: user
+        - kubernetesSecretKey: admin-password
+          vaultSecretPath: secrets/data/grafana
+          vaultSecretKey: password
+  - name: argocd-notifications-controller
+    namespace: argocd
+    roleName: argocd-notifications-controller
+    secrets:
+      argocd-notifications-secret:
+        - kubernetesSecretKey: discord-url
+          vaultSecretPath: secrets/data/argocd/notifications
+          vaultSecretKey: discord_url
+        - kubernetesSecretKey: grafana-api-key
+          vaultSecretPath: secrets/data/argocd/notifications
+          vaultSecretKey: grafana_api_key
+        - kubernetesSecretKey: grafana-url
+          vaultSecretPath: secrets/data/argocd/notifications
+          vaultSecretKey: grafana_url

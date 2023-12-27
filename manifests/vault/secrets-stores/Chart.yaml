@@ -1,0 +1,7 @@
+apiVersion: v2
+name: secrets-stores
+description: A Helm chart for secretproviderclass
+
+type: application
+
+version: 0.1.0
